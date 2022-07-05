@@ -1,0 +1,11 @@
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.exe.config
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.exe
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.pdb
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.AssemblyReference.cache
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.SuggestedBindingRedirects.cache
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.Properties.Resources.resources
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.GenerateResource.cache
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.CoreCompileInputs.cache
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.exe
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.pdb
+D:\Lenguajes de programación\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.Form1.resources
