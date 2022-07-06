@@ -32,7 +32,7 @@ namespace Sistema_De_Control_Escolar
             {
                 int idx = dataGridViewAlumnos.Rows.Add(); //Agregamos la fila
                 dataGridViewAlumnos.Rows[idx].Cells[0].Value = calificaciones[i].Matricula;
-                dataGridViewAlumnos.Rows[idx].Cells[1].Value = alumnos.Find(a => a.Id == calificaciones[i].Matricula).FullName;
+                dataGridViewAlumnos.Rows[idx].Cells[1].Value = alumnos.Find(a => a.Matricula == calificaciones[i].Matricula).FullName;
                 dataGridViewAlumnos.Rows[idx].Cells[2].Value = calificaciones[i].CalifacionObtenida;
             }
         }

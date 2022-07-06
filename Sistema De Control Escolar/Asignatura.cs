@@ -8,15 +8,15 @@ namespace Faculty
 {
     public class Asignatura
     {
-        public int Id { get; }
-        public string Name { get; }
+        public int Clave { get; }
+        public string Nombre { get; }
         public int Creditos { get; }
 
         public Asignatura(int id, string name, int creditos) { 
         
-            Id = id;
+            Clave = id;
 
-            Name = name;
+            Nombre = name;
 
             Creditos = creditos;
         

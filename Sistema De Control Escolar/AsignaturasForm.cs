@@ -28,8 +28,8 @@ namespace Sistema_De_Control_Escolar
             for (int i = 0; i < asignaturas.Count; i++)
             {
                 int idx = dataGridViewAsignaturas.Rows.Add(); //Agregamos la fila
-                dataGridViewAsignaturas.Rows[idx].Cells[0].Value = asignaturas[i].Id;
-                dataGridViewAsignaturas.Rows[idx].Cells[1].Value = asignaturas[i].Name;
+                dataGridViewAsignaturas.Rows[idx].Cells[0].Value = asignaturas[i].Clave;
+                dataGridViewAsignaturas.Rows[idx].Cells[1].Value = asignaturas[i].Nombre;
                 dataGridViewAsignaturas.Rows[idx].Cells[2].Value = asignaturas[i].Creditos;
             }
         }

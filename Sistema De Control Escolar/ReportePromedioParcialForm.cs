@@ -32,7 +32,7 @@ namespace Sistema_De_Control_Escolar
             {
                 int idx = dataGridViewPromParcial.Rows.Add(); //Agregamos la fila
                 dataGridViewPromParcial.Rows[idx].Cells[0].Value = calificaciones[i].Matricula;
-                dataGridViewPromParcial.Rows[idx].Cells[1].Value = alumnos.Find(a => a.Id == calificaciones[i].Matricula).FullName;
+                dataGridViewPromParcial.Rows[idx].Cells[1].Value = alumnos.Find(a => a.Matricula == calificaciones[i].Matricula).FullName;
                 dataGridViewPromParcial.Rows[idx].Cells[2].Value = calificaciones[i].Promedio;
                 dataGridViewPromParcial.Rows[idx].Cells[3].Value = calificaciones[i].Creditos;
                 dataGridViewPromParcial.Rows[idx].Cells[4].Value = calificaciones[i].Porcentaje;

@@ -45,17 +45,20 @@ namespace Sistema_De_Control_Escolar
             int calificacion = Convert.ToInt32(txtCalificacion.Text);
 
             //Condiciones que determinan que los datos introducidos fueron correctos
-            bool condicion_1 = alumnos.Exists(a => a.Id == matricula); //Existe el alumno
-            bool condicion_2 = asignaturas.Exists(a => a.Id == clave); //Existe la materia
+            bool condicion_1 = alumnos.Exists(a => a.Matricula == matricula); //Existe el alumno
+            bool condicion_2 = asignaturas.Exists(a => a.Clave == clave); //Existe la materia
             bool condicion_3 = (calificacion >= 0 && calificacion <= 100) ? true : false; //Calificaión entre 0 y 100
-            bool condicion_4 = calificaciones.Exists(a => a.Matricula == matricula && a.Clave == clave); //Calificación ya asignada
+            bool condicion_4 = calificaciones.Exists(a => a.Matricula == matricula && a.Clave == clave && a.CalifacionObtenida == -1); //Calificación no asignada
 
-            if (condicion_1 && condicion_2 && condicion_3 && !condicion_4)
+            if (condicion_1 && condicion_2 && condicion_3 && condicion_4)
             {
                 controlEscolar.NewCalificacion(matricula, clave, calificacion);
                 MessageBox.Show("Registro exitoso", "Aviso",
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Information);
+                txtMatricula.Clear();
+                txtMateriaId.Clear();
+                txtCalificacion.Clear();
             }
             else {
                 MessageBox.Show("Alguno de los datos fueron incorrecto, prueba:\nRevisar la matrícula\nRevisar la clave de la materia\n" +

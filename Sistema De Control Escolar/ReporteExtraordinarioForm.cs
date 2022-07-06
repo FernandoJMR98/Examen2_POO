@@ -27,8 +27,8 @@ namespace Sistema_De_Control_Escolar
             for (int i = 0; i < asignaturas.Count; i++)
             {
                 int idx = dataGridViewExtras.Rows.Add(); //Agregamos la fila
-                dataGridViewExtras.Rows[idx].Cells[0].Value = asignaturas[i].Id;
-                dataGridViewExtras.Rows[idx].Cells[1].Value = asignaturas[i].Name;
+                dataGridViewExtras.Rows[idx].Cells[0].Value = asignaturas[i].Clave;
+                dataGridViewExtras.Rows[idx].Cells[1].Value = asignaturas[i].Nombre;
                 dataGridViewExtras.Rows[idx].Cells[2].Value = asignaturas[i].Creditos;
             }
         

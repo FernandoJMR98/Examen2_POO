@@ -30,7 +30,7 @@ namespace Sistema_De_Control_Escolar
             for (int i = 0; i < alumnos.Count; i++)
             {
                 int idx = dataGridViewAlumExtra.Rows.Add(); //Agregamos la fila
-                dataGridViewAlumExtra.Rows[idx].Cells[0].Value = alumnos[i].Id;
+                dataGridViewAlumExtra.Rows[idx].Cells[0].Value = alumnos[i].Matricula;
                 dataGridViewAlumExtra.Rows[idx].Cells[1].Value = alumnos[i].FullName;
             }
 
@@ -42,8 +42,8 @@ namespace Sistema_De_Control_Escolar
             for (int i = 0; i < asignaturas.Count; i++)
             {
                 int idx = dataGridViewMateriaExtra.Rows.Add(); //Agregamos la fila
-                dataGridViewMateriaExtra.Rows[idx].Cells[0].Value = asignaturas[i].Id;
-                dataGridViewMateriaExtra.Rows[idx].Cells[1].Value = asignaturas[i].Name;
+                dataGridViewMateriaExtra.Rows[idx].Cells[0].Value = asignaturas[i].Clave;
+                dataGridViewMateriaExtra.Rows[idx].Cells[1].Value = asignaturas[i].Nombre;
             }
 
 

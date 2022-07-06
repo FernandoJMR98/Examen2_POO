@@ -44,8 +44,8 @@ namespace Sistema_De_Control_Escolar
 
             if (name != "" && last_name != "") {
 
-                existe = alumnos.Exists(a => a.Name.ToLower().Equals(name)
-                        && a.LastName.ToLower().Equals(last_name));
+                existe = alumnos.Exists(a => a.Nombre.ToLower().Equals(name)
+                        && a.Apellido.ToLower().Equals(last_name));
 
                 if (existe)
                 {
@@ -57,9 +57,12 @@ namespace Sistema_De_Control_Escolar
                 {
                     matricula = controlEscolar.GetNewMatricula();
                     controlEscolar.NewAlumno(matricula, myTI.ToTitleCase(name), myTI.ToTitleCase(last_name));
+                    controlEscolar.NewKardex(matricula);
                     MessageBox.Show("Registro exitoso", "Aviso",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
+                    txtNombre.Clear();
+                    txtApellido.Clear();
                 }
             }
 

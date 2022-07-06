@@ -42,26 +42,32 @@ namespace Faculty
         }
 
         public List<Alumno> GetAlumnos() {
-            alumnos.Sort((a, b) => a.LastName.CompareTo(b.LastName));
+            alumnos.Sort((a, b) => a.Apellido.CompareTo(b.Apellido));
             return alumnos;
         }
 
         public void NewAlumno(int AlumnoID, string AlumnoName, string AlumnoLastName) {
             alumnos.Add(new Alumno(AlumnoID, AlumnoName, AlumnoLastName));
-            EasyFile<Alumno>.SaveDataToFile(txt_alumnos, new[] { "Id",
-                "Name", "LastName" }, alumnos);
+            EasyFile<Alumno>.SaveDataToFile(txt_alumnos, new[] { "Matricula",
+                "Nombre", "Apellido" }, alumnos);
         }
 
         public void NewCalificacion(int matricula, int clave, int cal)
         {
-            calificaciones.Add(new Calificacion(matricula, clave, cal));
+            List<Calificacion> list_cal = new List<Calificacion>();
+            list_cal = GetCalificaciones();
+
+            list_cal.RemoveAll(a => a.Matricula == matricula && a.Clave == clave);
+            list_cal.Add(new Calificacion(matricula, clave, cal));
+            list_cal.Sort((a, b) => a.Matricula.CompareTo(b.Matricula));
+
             EasyFile<Calificacion>.SaveDataToFile(txt_calificaciones, new[] { "Matricula",
-                "Clave", "CalifacionObtenida" }, calificaciones);
+                "Clave", "CalifacionObtenida" }, list_cal);
         }
 
         public List<Asignatura> GetAsignaturas()
         {
-            asignaturas.Sort((a, b) => a.Id.CompareTo(b.Id));
+            asignaturas.Sort((a, b) => a.Clave.CompareTo(b.Clave));
             return asignaturas;
         }
 
@@ -73,9 +79,18 @@ namespace Faculty
 
         public int GetNewMatricula()
         {
-            alumnos.Sort((a, b) => a.Id.CompareTo(b.Id));
+            alumnos.Sort((a, b) => a.Matricula.CompareTo(b.Matricula));
             int idx = alumnos.Count()-1;
-            return alumnos.ElementAt(idx).Id + 1;
+            return alumnos.ElementAt(idx).Matricula + 1;
+        }
+
+        public void NewKardex(int matricula) {
+            List<Calificacion> cal = new List<Calificacion>();
+            calificaciones.ForEach(a => cal.Add(new Calificacion(a.Matricula, a.Clave, a.CalifacionObtenida)));
+            asignaturas.ForEach(a => cal.Add(new Calificacion(matricula, a.Clave, -1)));
+            cal.ForEach(a => NewCalificacion(a.Matricula, a.Clave, a.CalifacionObtenida));
+            EasyFile<Calificacion>.SaveDataToFile(txt_calificaciones, new[] { "Matricula",
+                "Clave", "CalifacionObtenida" }, cal);
         }
 
         public decimal GetCalificacionFinal(int matricula) 
@@ -132,7 +147,7 @@ namespace Faculty
             List<CalificaionPromedio> cal = new List<CalificaionPromedio>();
 
             alumnos.ForEach(a =>
-                cal.Add(new CalificaionPromedio(a.Id, 0000, GetCalificacionFinal(a.Id))));
+                cal.Add(new CalificaionPromedio(a.Matricula, 0000, GetCalificacionFinal(a.Matricula))));
 
             cal = cal.OrderByDescending(a => a.CalifacionObtenida).ToList();
 
@@ -147,13 +162,13 @@ namespace Faculty
             decimal porcentaje = 0;
 
             alumnos.ForEach(a => {
-                calificaciones.FindAll(d => d.Matricula == a.Id && d.CalifacionObtenida >= 0 && d.CalifacionObtenida >= 70)
+                calificaciones.FindAll(d => d.Matricula == a.Matricula && d.CalifacionObtenida >= 0 && d.CalifacionObtenida >= 70)
                 .ForEach(b =>
                 {
-                    creditos += asignaturas.Find(c => c.Id == b.Clave).Creditos;
+                    creditos += asignaturas.Find(c => c.Clave == b.Clave).Creditos;
                 });
-                calificaciones.FindAll(e => e.Matricula == a.Id)
-                .ForEach(f => creditosTotales += asignaturas.Find(c => c.Id == f.Clave).Creditos);
+                calificaciones.FindAll(e => e.Matricula == a.Matricula)
+                .ForEach(f => creditosTotales += asignaturas.Find(c => c.Clave == f.Clave).Creditos);
 
                 if (creditosTotales > 0)
                 {
@@ -161,7 +176,7 @@ namespace Faculty
                 }
                 else { porcentaje = 0; }
 
-                cal.Add(new CalificacionConCreditos(a.Id, creditos, GetCalificacionParcial(a.Id), Decimal.Round(porcentaje, 2)));
+                cal.Add(new CalificacionConCreditos(a.Matricula, creditos, GetCalificacionParcial(a.Matricula), Decimal.Round(porcentaje, 2)));
                 creditos = 0;
                 creditosTotales= 0;
             });
@@ -176,9 +191,9 @@ namespace Faculty
             List<Asignatura> cal = new List<Asignatura>();
             int contador = 0;
             asignaturas.ForEach(b => {
-                calificaciones.FindAll(a => a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0 && a.Clave == b.Id).
+                calificaciones.FindAll(a => a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0 && a.Clave == b.Clave).
                 ForEach(c => { contador++; });
-                cal.Add(new Asignatura(b.Id, b.Name, contador));
+                cal.Add(new Asignatura(b.Clave, b.Nombre, contador));
                 contador = 0;
                 }
             );
@@ -194,9 +209,9 @@ namespace Faculty
 
             alumnos.ForEach(b =>
             {
-                if(calificaciones.Any(a => a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0 && a.Matricula == b.Id))
+                if(calificaciones.Any(a => a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0 && a.Matricula == b.Matricula))
                 {
-                    al.Add(new Alumno(b.Id, b.Name, b.LastName));
+                    al.Add(new Alumno(b.Matricula, b.Nombre, b.Apellido));
                 }
             });
             return al;
@@ -209,8 +224,8 @@ namespace Faculty
 
             calificaciones.FindAll(a => a.Matricula == matricula && a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0).ForEach(b => {
                 al.Add(new Asignatura(b.Clave,
-                    asignaturas.Find(c => c.Id == b.Clave).Name,
-                    asignaturas.Find(c => c.Id == b.Clave).Creditos
+                    asignaturas.Find(c => c.Clave == b.Clave).Nombre,
+                    asignaturas.Find(c => c.Clave == b.Clave).Creditos
                 ));
             });
 

@@ -26,9 +26,9 @@ namespace Sistema_De_Control_Escolar
         public void FillAlumnos(List<Alumno> alumnos) {
             for (int i = 0; i < alumnos.Count; i++) {
                 int idx = dataGridViewAlumnos.Rows.Add(); //Agregamos la fila
-                dataGridViewAlumnos.Rows[idx].Cells[0].Value = alumnos[i].LastName;
-                dataGridViewAlumnos.Rows[idx].Cells[1].Value = alumnos[i].Name;
-                dataGridViewAlumnos.Rows[idx].Cells[2].Value = alumnos[i].Id;
+                dataGridViewAlumnos.Rows[idx].Cells[0].Value = alumnos[i].Apellido;
+                dataGridViewAlumnos.Rows[idx].Cells[1].Value = alumnos[i].Nombre;
+                dataGridViewAlumnos.Rows[idx].Cells[2].Value = alumnos[i].Matricula;
             }
         }
 

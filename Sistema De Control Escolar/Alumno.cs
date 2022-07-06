@@ -8,17 +8,17 @@ namespace Faculty
 {
     public class Alumno
     {
-        public int Id { get; }
-        public string Name { get; }
-        public string LastName { get; }
-        public string FullName => $"{LastName}, {Name}";
+        public int Matricula { get; }
+        public string Nombre { get; }
+        public string Apellido { get; }
+        public string FullName => $"{Apellido}, {Nombre}";
 
 
         public Alumno(int id, string name, string lastName) {
             
-            Id = id;
-            Name = name;
-            LastName = lastName;
+            Matricula = id;
+            Nombre = name;
+            Apellido = lastName;
 
         }
     }
