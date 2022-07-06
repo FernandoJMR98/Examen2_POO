@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema De Control Escolar", "Sistema De Control Escolar.csproj", "{D2B0D32A-9D35-4592-A3C2-EA2FFAEDD1F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6DA85703-D102-4B52-AA39-A5D3E51EDDD9}"
+	ProjectSection(SolutionItems) = preProject
+		alumnos.txt = alumnos.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d2b0d32a-9d35-4592-a3c2-ea2ffaedd1f2": {
+      "ProjectGuid": "d2b0d32a-9d35-4592-a3c2-ea2ffaedd1f2",
+      "DisplayName": "Sistema De Control Escolar",
+      "ColorIndex": 0
+    },
+    "6da85703-d102-4b52-aa39-a5d3e51eddd9": {
+      "ProjectGuid": "6da85703-d102-4b52-aa39-a5d3e51eddd9",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

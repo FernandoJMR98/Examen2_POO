@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Faculty
+namespace Util
 {
 	public delegate T LoadDataCallback<T>(string[] tokens) where T : class;
 	public delegate List<string> SaveDataCallback<T>(T item) where T : class;
