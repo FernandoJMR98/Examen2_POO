@@ -83,7 +83,7 @@ namespace Sistema_De_Control_Escolar
 
         private void btnAsignarCalificaciones_Click(object sender, EventArgs e)
         {
-            openForm(new AsignarCalificacionesForm());
+            openForm(new AsignarCalificacionesForm(controlEscolar));
             HideSubMenus();
         }
 

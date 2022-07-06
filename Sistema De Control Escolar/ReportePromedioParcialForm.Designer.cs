@@ -34,7 +34,7 @@
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proemdio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Creditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromParcial)).BeginInit();
             this.SuspendLayout();
@@ -47,10 +47,9 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(821, 34);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(616, 28);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(53, 31);
+            this.btnClose.Size = new System.Drawing.Size(40, 25);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -61,10 +60,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(16, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(589, 42);
+            this.label1.Size = new System.Drawing.Size(477, 36);
             this.label1.TabIndex = 5;
             this.label1.Text = "Promedio parcial de los alumnos";
             // 
@@ -78,13 +76,12 @@
             this.Matricula,
             this.Porcentaje,
             this.Nombre,
-            this.Proemdio,
+            this.Promedio,
             this.Creditos});
-            this.dataGridViewPromParcial.Location = new System.Drawing.Point(16, 95);
-            this.dataGridViewPromParcial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewPromParcial.Location = new System.Drawing.Point(12, 77);
             this.dataGridViewPromParcial.Name = "dataGridViewPromParcial";
             this.dataGridViewPromParcial.RowHeadersWidth = 51;
-            this.dataGridViewPromParcial.Size = new System.Drawing.Size(859, 430);
+            this.dataGridViewPromParcial.Size = new System.Drawing.Size(644, 349);
             this.dataGridViewPromParcial.TabIndex = 7;
             // 
             // Matricula
@@ -92,46 +89,47 @@
             this.Matricula.HeaderText = "Matricula";
             this.Matricula.MinimumWidth = 6;
             this.Matricula.Name = "Matricula";
-            this.Matricula.Width = 125;
+            this.Matricula.ReadOnly = true;
             // 
             // Porcentaje
             // 
             this.Porcentaje.HeaderText = "Nombre completo";
             this.Porcentaje.MinimumWidth = 6;
             this.Porcentaje.Name = "Porcentaje";
-            this.Porcentaje.Width = 125;
+            this.Porcentaje.ReadOnly = true;
+            this.Porcentaje.Width = 200;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Promedio parcial";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
+            this.Nombre.ReadOnly = true;
             // 
-            // Proemdio
+            // Promedio
             // 
-            this.Proemdio.HeaderText = "Créditos aprobados";
-            this.Proemdio.MinimumWidth = 6;
-            this.Proemdio.Name = "Proemdio";
-            this.Proemdio.Width = 125;
+            this.Promedio.HeaderText = "Créditos aprobados";
+            this.Promedio.MinimumWidth = 6;
+            this.Promedio.Name = "Promedio";
+            this.Promedio.ReadOnly = true;
+            this.Promedio.Width = 70;
             // 
             // Creditos
             // 
             this.Creditos.HeaderText = "Porcentaje de créditos aprobados";
             this.Creditos.MinimumWidth = 6;
             this.Creditos.Name = "Creditos";
-            this.Creditos.Width = 125;
+            this.Creditos.ReadOnly = true;
             // 
             // ReportePromedioParcialForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(20)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(891, 642);
+            this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.dataGridViewPromParcial);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReportePromedioParcialForm";
             this.Text = "ReportePromedioParcialForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromParcial)).EndInit();
@@ -148,7 +146,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proemdio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Creditos;
     }
 }

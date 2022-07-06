@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -31,15 +32,20 @@ namespace Sistema_De_Control_Escolar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = txtNombre.Text;
-            string last_name = txtApellido.Text;
+            string name = txtNombre.Text.Trim();
+            string last_name = txtApellido.Text.Trim();
             int matricula;
             bool existe;
+            
+            name = name.ToLower();
+            last_name = last_name.ToLower();
+            
+            TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
 
             if (name != "" && last_name != "") {
 
-                existe = alumnos.Exists(a => a.Name.Equals(name)
-                        && a.LastName.Equals(last_name));
+                existe = alumnos.Exists(a => a.Name.ToLower().Equals(name)
+                        && a.LastName.ToLower().Equals(last_name));
 
                 if (existe)
                 {
@@ -50,7 +56,7 @@ namespace Sistema_De_Control_Escolar
                 else
                 {
                     matricula = controlEscolar.GetNewMatricula();
-                    controlEscolar.NewAlumno(matricula, name, last_name);
+                    controlEscolar.NewAlumno(matricula, myTI.ToTitleCase(name), myTI.ToTitleCase(last_name));
                     MessageBox.Show("Registro exitoso", "Aviso",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
@@ -65,6 +71,11 @@ namespace Sistema_De_Control_Escolar
         {
             txtNombre.Clear();
             txtApellido.Clear();
+        }
+
+        private void AltaAlumnoForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

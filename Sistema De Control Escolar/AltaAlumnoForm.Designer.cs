@@ -155,6 +155,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "AltaAlumnoForm";
             this.Text = "AltaAlumnoForm";
+            this.Load += new System.EventHandler(this.AltaAlumnoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

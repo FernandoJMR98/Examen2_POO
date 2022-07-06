@@ -54,16 +54,14 @@ namespace Sistema_De_Control_Escolar
             this.Close();
         }
 
-        private void dataGridViewMateriaExtra_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void dataGridViewAlumExtra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewAlumExtra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            asignaturas = controlEscolar.GetAsignaturasReprobadas(int.Parse(dataGridViewAlumExtra.SelectedCells[0].Value.ToString()));
+            int rowindex = dataGridViewAlumExtra.CurrentCell.RowIndex;
+            asignaturas = controlEscolar.GetAsignaturasReprobadas(int.Parse(dataGridViewAlumExtra.Rows[rowindex].Cells[0].Value.ToString()));
             dataGridViewMateriaExtra.Rows.Clear();
             FillAsignaturas(asignaturas);
+          
         }
     }
 }

@@ -45,10 +45,9 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(821, 34);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(616, 28);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(53, 31);
+            this.btnClose.Size = new System.Drawing.Size(40, 25);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -59,10 +58,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(16, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 42);
+            this.label1.Size = new System.Drawing.Size(232, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "Extraordinarios";
             // 
@@ -76,11 +74,10 @@
             this.Clave,
             this.Asignatura,
             this.Cantidad});
-            this.dataGridViewExtras.Location = new System.Drawing.Point(16, 95);
-            this.dataGridViewExtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewExtras.Location = new System.Drawing.Point(12, 77);
             this.dataGridViewExtras.Name = "dataGridViewExtras";
             this.dataGridViewExtras.RowHeadersWidth = 51;
-            this.dataGridViewExtras.Size = new System.Drawing.Size(859, 430);
+            this.dataGridViewExtras.Size = new System.Drawing.Size(644, 349);
             this.dataGridViewExtras.TabIndex = 11;
             this.dataGridViewExtras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExtras_CellContentClick);
             // 
@@ -89,6 +86,7 @@
             this.Clave.HeaderText = "Clave";
             this.Clave.MinimumWidth = 6;
             this.Clave.Name = "Clave";
+            this.Clave.ReadOnly = true;
             this.Clave.Width = 125;
             // 
             // Asignatura
@@ -96,25 +94,26 @@
             this.Asignatura.HeaderText = "Asignatura";
             this.Asignatura.MinimumWidth = 6;
             this.Asignatura.Name = "Asignatura";
-            this.Asignatura.Width = 125;
+            this.Asignatura.ReadOnly = true;
+            this.Asignatura.Width = 200;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Alumnos reprobados";
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             this.Cantidad.Width = 125;
             // 
             // ReporteExtraordinarioForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(20)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(891, 642);
+            this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.dataGridViewExtras);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReporteExtraordinarioForm";
             this.Text = "ReporteExtraordinarioForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExtras)).EndInit();

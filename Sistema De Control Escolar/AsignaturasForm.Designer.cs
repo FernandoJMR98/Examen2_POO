@@ -82,17 +82,23 @@
             // Clave
             // 
             this.Clave.HeaderText = "Clave";
+            this.Clave.MaxInputLength = 256;
             this.Clave.Name = "Clave";
+            this.Clave.Width = 125;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MaxInputLength = 256;
             this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 200;
             // 
             // Creditos
             // 
             this.Creditos.HeaderText = "Créditos";
+            this.Creditos.MaxInputLength = 256;
             this.Creditos.Name = "Creditos";
+            this.Creditos.Width = 125;
             // 
             // AsignaturasForm
             // 

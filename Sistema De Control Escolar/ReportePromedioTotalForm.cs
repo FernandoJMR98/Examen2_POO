@@ -14,8 +14,8 @@ namespace Sistema_De_Control_Escolar
     public partial class ReportePromedioTotalForm : Form
     {
         private ControlEscolar controlEscolar;
-        private List<Calificacion> calificaciones = new List<Calificacion>();
-        private List<Alumno>alumnos = new List<Alumno>();
+        private List<CalificaionPromedio> calificaciones = new List<CalificaionPromedio>();
+        private List<Alumno> alumnos = new List<Alumno>();
         
         public ReportePromedioTotalForm(ControlEscolar control_Escolar)
         {
@@ -26,7 +26,7 @@ namespace Sistema_De_Control_Escolar
             FillCalificaciones(calificaciones, alumnos);
         }
 
-        public void FillCalificaciones(List<Calificacion> calificaciones, List<Alumno> alumnos)
+        public void FillCalificaciones(List<CalificaionPromedio> calificaciones, List<Alumno> alumnos)
         {
             for (int i = 0; i < calificaciones.Count; i++)
             {

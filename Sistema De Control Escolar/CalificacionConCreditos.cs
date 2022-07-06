@@ -10,9 +10,9 @@ namespace Faculty
     {
         public int Matricula { get; }
         public int Creditos { get; }
-        public int Promedio { get; }
-        public float Porcentaje { get; }
-        public CalificacionConCreditos(int matricula, int creditos, int promedio, float porcentaje)
+        public decimal Promedio { get; }
+        public decimal Porcentaje { get; }
+        public CalificacionConCreditos(int matricula, int creditos, decimal promedio, decimal porcentaje)
         {
             Matricula = matricula;
             Creditos = creditos;

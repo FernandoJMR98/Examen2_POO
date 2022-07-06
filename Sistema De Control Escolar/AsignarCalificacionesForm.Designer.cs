@@ -70,6 +70,7 @@
             this.btnAlta.TabIndex = 19;
             this.btnAlta.Text = "Asignar";
             this.btnAlta.UseVisualStyleBackColor = false;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // label3
             // 

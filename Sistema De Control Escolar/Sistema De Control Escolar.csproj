@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="CalificacionConCreditos.cs" />
     <Compile Include="CalificacionConInfo.cs" />
+    <Compile Include="CalificaionPromedio.cs" />
     <Compile Include="ReporteAlumnosReprobadosForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,9 +13,15 @@ namespace Faculty
         private List<Asignatura> asignaturas;
         private List<Calificacion> calificaciones;
 
-        private string txt_alumnos = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\alumnos.txt";
-        private string txt_asignaturas = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\asignaturas.txt";
-        private string txt_calificaciones = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\calificaciones.txt";
+        //Path máquina 1
+        //private string txt_alumnos = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\alumnos.txt";
+        //private string txt_asignaturas = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\asignaturas.txt";
+        //private string txt_calificaciones = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\calificaciones.txt";
+
+        //Path máquina 2
+        private string txt_alumnos = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\alumnos.txt";
+        private string txt_asignaturas = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\asignaturas.txt";
+        private string txt_calificaciones = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\calificaciones.txt";
 
 
         public ControlEscolar() { 
@@ -59,6 +65,12 @@ namespace Faculty
             return asignaturas;
         }
 
+        public List<Calificacion> GetCalificaciones()
+        {
+            calificaciones.Sort((a, b) => a.Matricula.CompareTo(b.Matricula));
+            return calificaciones;
+        }
+
         public int GetNewMatricula()
         {
             alumnos.Sort((a, b) => a.Id.CompareTo(b.Id));
@@ -66,10 +78,10 @@ namespace Faculty
             return alumnos.ElementAt(idx).Id + 1;
         }
 
-        public int GetCalificacionFinal(int matricula) 
+        public decimal GetCalificacionFinal(int matricula) 
         {
             List<Calificacion> cal = new List<Calificacion>();
-            int promedio = 0;
+            decimal promedio = 0;
 
             calificaciones.FindAll(a => a.Matricula == matricula).ForEach(a =>
                 cal.Add(new Calificacion(
@@ -86,14 +98,14 @@ namespace Faculty
                 promedio = 0;
             }
 
-            return promedio;
+            return Decimal.Round(promedio, 2);
 
         }
 
-        public int GetCalificacionParcial(int matricula)
+        public decimal GetCalificacionParcial(int matricula)
         {
             List<Calificacion> cal = new List<Calificacion>();
-            int promedio = 0;
+            decimal promedio = 0;
 
             calificaciones.FindAll(a => a.Matricula == matricula)
                 .FindAll(a => a.CalifacionObtenida >= 70 ).ForEach(a => {
@@ -111,16 +123,16 @@ namespace Faculty
                 promedio = 0;
             }
 
-            return promedio;
+            return Decimal.Round(promedio, 2);
 
         }
 
-        public List<Calificacion> GetCalificacionesFinales()
+        public List<CalificaionPromedio> GetCalificacionesFinales()
         {
-            List<Calificacion> cal = new List<Calificacion>();
+            List<CalificaionPromedio> cal = new List<CalificaionPromedio>();
 
             alumnos.ForEach(a =>
-                cal.Add(new Calificacion(a.Id, 0000, GetCalificacionFinal(a.Id))));
+                cal.Add(new CalificaionPromedio(a.Id, 0000, GetCalificacionFinal(a.Id))));
 
             cal = cal.OrderByDescending(a => a.CalifacionObtenida).ToList();
 
@@ -132,7 +144,7 @@ namespace Faculty
             List<CalificacionConCreditos> cal = new List<CalificacionConCreditos>();
             int creditosTotales = 0;
             int creditos = 0;
-            float porcentaje = 0;
+            decimal porcentaje = 0;
 
             alumnos.ForEach(a => {
                 calificaciones.FindAll(d => d.Matricula == a.Id && d.CalifacionObtenida >= 0 && d.CalifacionObtenida >= 70)
@@ -145,11 +157,11 @@ namespace Faculty
 
                 if (creditosTotales > 0)
                 {
-                    porcentaje = (float)creditos / creditosTotales * 100;
+                    porcentaje = (decimal)creditos / creditosTotales * 100;
                 }
                 else { porcentaje = 0; }
 
-                cal.Add(new CalificacionConCreditos(a.Id, creditos, GetCalificacionParcial(a.Id), porcentaje));
+                cal.Add(new CalificacionConCreditos(a.Id, creditos, GetCalificacionParcial(a.Id), Decimal.Round(porcentaje, 2)));
                 creditos = 0;
                 creditosTotales= 0;
             });
