@@ -37,6 +37,18 @@ namespace Sistema_De_Control_Escolar
 
         }
 
+        public void FillAsignaturas(List<Asignatura> asignaturas)
+        {
+            for (int i = 0; i < asignaturas.Count; i++)
+            {
+                int idx = dataGridViewMateriaExtra.Rows.Add(); //Agregamos la fila
+                dataGridViewMateriaExtra.Rows[idx].Cells[0].Value = asignaturas[i].Id;
+                dataGridViewMateriaExtra.Rows[idx].Cells[1].Value = asignaturas[i].Name;
+            }
+
+
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -49,7 +61,9 @@ namespace Sistema_De_Control_Escolar
 
         private void dataGridViewAlumExtra_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            asignaturas = controlEscolar.GetAsignaturasReprobadas(int.Parse(dataGridViewAlumExtra.SelectedRows[0].ToString()));
+            asignaturas = controlEscolar.GetAsignaturasReprobadas(int.Parse(dataGridViewAlumExtra.SelectedCells[0].Value.ToString()));
+            dataGridViewMateriaExtra.Rows.Clear();
+            FillAsignaturas(asignaturas);
         }
     }
 }

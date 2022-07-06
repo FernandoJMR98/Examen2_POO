@@ -135,7 +135,7 @@ namespace Faculty
             float porcentaje = 0;
 
             alumnos.ForEach(a => {
-                calificaciones.FindAll(d => d.Matricula == a.Id && d.CalifacionObtenida >= 70)
+                calificaciones.FindAll(d => d.Matricula == a.Id && d.CalifacionObtenida >= 0 && d.CalifacionObtenida >= 70)
                 .ForEach(b =>
                 {
                     creditos += asignaturas.Find(c => c.Id == b.Clave).Creditos;
@@ -164,7 +164,7 @@ namespace Faculty
             List<Asignatura> cal = new List<Asignatura>();
             int contador = 0;
             asignaturas.ForEach(b => {
-                calificaciones.FindAll(a => a.CalifacionObtenida < 70 && a.Clave == b.Id).
+                calificaciones.FindAll(a => a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0 && a.Clave == b.Id).
                 ForEach(c => { contador++; });
                 cal.Add(new Asignatura(b.Id, b.Name, contador));
                 contador = 0;
@@ -182,7 +182,7 @@ namespace Faculty
 
             alumnos.ForEach(b =>
             {
-                if(calificaciones.Any(a => a.CalifacionObtenida < 70 && a.Matricula == b.Id))
+                if(calificaciones.Any(a => a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0 && a.Matricula == b.Id))
                 {
                     al.Add(new Alumno(b.Id, b.Name, b.LastName));
                 }
@@ -195,7 +195,7 @@ namespace Faculty
         {
             List<Asignatura> al = new List<Asignatura>();
 
-            calificaciones.FindAll(a => a.Matricula == matricula).ForEach(b => {
+            calificaciones.FindAll(a => a.Matricula == matricula && a.CalifacionObtenida < 70 && a.CalifacionObtenida >= 0).ForEach(b => {
                 al.Add(new Asignatura(b.Clave,
                     asignaturas.Find(c => c.Id == b.Clave).Name,
                     asignaturas.Find(c => c.Id == b.Clave).Creditos
