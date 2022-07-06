@@ -128,6 +128,7 @@
             this.DGMatricula.MinimumWidth = 6;
             this.DGMatricula.Name = "DGMatricula";
             this.DGMatricula.ReadOnly = true;
+            this.DGMatricula.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.DGMatricula.Width = 125;
             // 
             // Nombre
@@ -144,6 +145,7 @@
             this.Clave.MinimumWidth = 6;
             this.Clave.Name = "Clave";
             this.Clave.ReadOnly = true;
+            this.Clave.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Clave.Width = 125;
             // 
             // Asignatura

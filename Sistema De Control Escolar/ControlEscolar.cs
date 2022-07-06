@@ -228,7 +228,7 @@ namespace Faculty
                     asignaturas.Find(c => c.Clave == b.Clave).Creditos
                 ));
             });
-
+            al.Sort((a,b) => a.Clave.CompareTo(b.Clave));
             return al;
         }
 

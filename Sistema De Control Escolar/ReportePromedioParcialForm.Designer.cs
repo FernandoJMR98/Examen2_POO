@@ -116,7 +116,7 @@
             // 
             // Creditos
             // 
-            this.Creditos.HeaderText = "Porcentaje de créditos aprobados";
+            this.Creditos.HeaderText = "Porcentaje de créditos aprobados [%]";
             this.Creditos.MinimumWidth = 6;
             this.Creditos.Name = "Creditos";
             this.Creditos.ReadOnly = true;
