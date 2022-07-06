@@ -13,9 +13,9 @@ namespace Faculty
         private List<Asignatura> asignaturas;
         private List<Calificacion> calificaciones;
 
-        private string txt_alumnos = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\alumnos.txt";
-        private string txt_asignaturas = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\asignaturas.txt";
-        private string txt_calificaciones = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\calificaciones.txt";
+        private string txt_alumnos = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\alumnos.txt";
+        private string txt_asignaturas = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\asignaturas.txt";
+        private string txt_calificaciones = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\calificaciones.txt";
 
 
         public ControlEscolar() { 
@@ -64,6 +64,145 @@ namespace Faculty
             alumnos.Sort((a, b) => a.Id.CompareTo(b.Id));
             int idx = alumnos.Count()-1;
             return alumnos.ElementAt(idx).Id + 1;
+        }
+
+        public int GetCalificacionFinal(int matricula) 
+        {
+            List<Calificacion> cal = new List<Calificacion>();
+            int promedio = 0;
+
+            calificaciones.FindAll(a => a.Matricula == matricula).ForEach(a =>
+                cal.Add(new Calificacion(
+                           a.Matricula, a.Clave, a.CalifacionObtenida)));
+
+            cal.RemoveAll(a => a.CalifacionObtenida == -1);
+            cal.ForEach(a => promedio += a.CalifacionObtenida);
+            if (cal.Count > 0)
+            {
+                promedio /= cal.Count();
+            }
+            else
+            {
+                promedio = 0;
+            }
+
+            return promedio;
+
+        }
+
+        public int GetCalificacionParcial(int matricula)
+        {
+            List<Calificacion> cal = new List<Calificacion>();
+            int promedio = 0;
+
+            calificaciones.FindAll(a => a.Matricula == matricula)
+                .FindAll(a => a.CalifacionObtenida >= 70 ).ForEach(a => {
+                    cal.Add(new Calificacion(
+                               a.Matricula, a.Clave, a.CalifacionObtenida));});
+
+            cal.RemoveAll(a => a.CalifacionObtenida == -1);
+            cal.ForEach(a => promedio += a.CalifacionObtenida);
+            if (cal.Count > 0)
+            {
+                promedio /= cal.Count();
+            }
+            else
+            {
+                promedio = 0;
+            }
+
+            return promedio;
+
+        }
+
+        public List<Calificacion> GetCalificacionesFinales()
+        {
+            List<Calificacion> cal = new List<Calificacion>();
+
+            alumnos.ForEach(a =>
+                cal.Add(new Calificacion(a.Id, 0000, GetCalificacionFinal(a.Id))));
+
+            cal = cal.OrderByDescending(a => a.CalifacionObtenida).ToList();
+
+            return cal;
+        }
+
+        public List<CalificacionConCreditos> GetCalificacionesParciales()
+        {
+            List<CalificacionConCreditos> cal = new List<CalificacionConCreditos>();
+            int creditosTotales = 0;
+            int creditos = 0;
+            float porcentaje = 0;
+
+            alumnos.ForEach(a => {
+                calificaciones.FindAll(d => d.Matricula == a.Id && d.CalifacionObtenida >= 70)
+                .ForEach(b =>
+                {
+                    creditos += asignaturas.Find(c => c.Id == b.Clave).Creditos;
+                });
+                calificaciones.FindAll(e => e.Matricula == a.Id)
+                .ForEach(f => creditosTotales += asignaturas.Find(c => c.Id == f.Clave).Creditos);
+
+                if (creditosTotales > 0)
+                {
+                    porcentaje = (float)creditos / creditosTotales * 100;
+                }
+                else { porcentaje = 0; }
+
+                cal.Add(new CalificacionConCreditos(a.Id, creditos, GetCalificacionParcial(a.Id), porcentaje));
+                creditos = 0;
+                creditosTotales= 0;
+            });
+
+            cal = cal.OrderByDescending(a=>a.Promedio).ToList();
+
+            return cal;
+        }
+
+        public List<Asignatura> GetAsignaturasPorAlumnos()
+        {
+            List<Asignatura> cal = new List<Asignatura>();
+            int contador = 0;
+            asignaturas.ForEach(b => {
+                calificaciones.FindAll(a => a.CalifacionObtenida < 70 && a.Clave == b.Id).
+                ForEach(c => { contador++; });
+                cal.Add(new Asignatura(b.Id, b.Name, contador));
+                contador = 0;
+                }
+            );
+
+            cal = cal.OrderByDescending(a => a.Creditos).ToList();
+
+            return cal;  
+        }
+
+        public List<Alumno> GetAlumnosReprobados()
+        {
+            List<Alumno> al = new List<Alumno>();
+
+            alumnos.ForEach(b =>
+            {
+                if(calificaciones.Any(a => a.CalifacionObtenida < 70 && a.Matricula == b.Id))
+                {
+                    al.Add(new Alumno(b.Id, b.Name, b.LastName));
+                }
+            });
+            return al;
+        } 
+
+
+        public List<Asignatura> GetAsignaturasReprobadas(int matricula)
+        {
+            List<Asignatura> al = new List<Asignatura>();
+
+            calificaciones.FindAll(a => a.Matricula == matricula).ForEach(b => {
+                al.Add(new Asignatura(b.Clave,
+                    asignaturas.Find(c => c.Id == b.Clave).Name,
+                    asignaturas.Find(c => c.Id == b.Clave).Creditos
+                ));
+            });
+
+            return al;
         }
 
     }

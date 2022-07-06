@@ -65,6 +65,8 @@
     <Compile Include="AlumnosForm.Designer.cs">
       <DependentUpon>AlumnosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalificacionConCreditos.cs" />
+    <Compile Include="CalificacionConInfo.cs" />
     <Compile Include="ReporteAlumnosReprobadosForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -94,25 +94,25 @@ namespace Sistema_De_Control_Escolar
 
         private void btnPromTotal_Click(object sender, EventArgs e)
         {
-            openForm(new ReportePromedioTotalForm());
+            openForm(new ReportePromedioTotalForm(controlEscolar));
             HideSubMenus();
         }
 
         private void btnPromParcial_Click(object sender, EventArgs e)
         {
-            openForm(new ReportePromedioParcialForm());
+            openForm(new ReportePromedioParcialForm(controlEscolar));
             HideSubMenus();
         }
 
         private void btnAlumnosReprobados_Click(object sender, EventArgs e)
         {
-            openForm(new ReporteAlumnosReprobadosForm());
+            openForm(new ReporteAlumnosReprobadosForm(controlEscolar));
             HideSubMenus();
         }
 
         private void btnExtraordinarios_Click(object sender, EventArgs e)
         {
-            openForm(new ReporteExtraordinarioForm());
+            openForm(new ReporteExtraordinarioForm(controlEscolar));
             HideSubMenus();
         }
 

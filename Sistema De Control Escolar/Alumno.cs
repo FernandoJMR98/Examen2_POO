@@ -11,6 +11,8 @@ namespace Faculty
         public int Id { get; }
         public string Name { get; }
         public string LastName { get; }
+        public string FullName => $"{LastName}, {Name}";
+
 
         public Alumno(int id, string name, string lastName) {
             

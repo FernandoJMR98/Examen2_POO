@@ -36,5 +36,10 @@ namespace Sistema_De_Control_Escolar
         {
             this.Close();
         }
+
+        private void dataGridViewAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

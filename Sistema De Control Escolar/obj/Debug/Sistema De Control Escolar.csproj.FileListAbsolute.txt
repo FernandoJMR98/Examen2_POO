@@ -38,3 +38,23 @@ D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\
 D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.CoreCompileInputs.cache
 D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.exe
 D:\Lenguajes de programacion\C_sharp\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.pdb
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.exe.config
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.exe
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.pdb
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.AssemblyReference.cache
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.SuggestedBindingRedirects.cache
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AcercaDeForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AltaAlumnoForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AlumnosForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReporteAlumnosReprobadosForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AsignarCalificacionesForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AsignaturasForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.Form1.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.Properties.Resources.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReporteExtraordinarioForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReportePromedioParcialForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReportePromedioTotalForm.resources
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.GenerateResource.cache
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.CoreCompileInputs.cache
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.exe
+C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.pdb

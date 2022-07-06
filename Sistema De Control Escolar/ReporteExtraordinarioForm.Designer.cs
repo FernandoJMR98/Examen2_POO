@@ -31,6 +31,9 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewExtras = new System.Windows.Forms.DataGridView();
+            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExtras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,9 +45,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(616, 28);
+            this.btnClose.Location = new System.Drawing.Point(821, 34);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 25);
+            this.btnClose.Size = new System.Drawing.Size(53, 31);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -55,9 +59,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(12, 28);
+            this.label1.Location = new System.Drawing.Point(16, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 36);
+            this.label1.Size = new System.Drawing.Size(284, 42);
             this.label1.TabIndex = 9;
             this.label1.Text = "Extraordinarios";
             // 
@@ -67,20 +72,49 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewExtras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExtras.Location = new System.Drawing.Point(12, 77);
+            this.dataGridViewExtras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Clave,
+            this.Asignatura,
+            this.Cantidad});
+            this.dataGridViewExtras.Location = new System.Drawing.Point(16, 95);
+            this.dataGridViewExtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewExtras.Name = "dataGridViewExtras";
-            this.dataGridViewExtras.Size = new System.Drawing.Size(644, 349);
+            this.dataGridViewExtras.RowHeadersWidth = 51;
+            this.dataGridViewExtras.Size = new System.Drawing.Size(859, 430);
             this.dataGridViewExtras.TabIndex = 11;
+            this.dataGridViewExtras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExtras_CellContentClick);
+            // 
+            // Clave
+            // 
+            this.Clave.HeaderText = "Clave";
+            this.Clave.MinimumWidth = 6;
+            this.Clave.Name = "Clave";
+            this.Clave.Width = 125;
+            // 
+            // Asignatura
+            // 
+            this.Asignatura.HeaderText = "Asignatura";
+            this.Asignatura.MinimumWidth = 6;
+            this.Asignatura.Name = "Asignatura";
+            this.Asignatura.Width = 125;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Alumnos reprobados";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 125;
             // 
             // ReporteExtraordinarioForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(20)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(891, 642);
             this.Controls.Add(this.dataGridViewExtras);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReporteExtraordinarioForm";
             this.Text = "ReporteExtraordinarioForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExtras)).EndInit();
@@ -94,5 +128,8 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewExtras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asignatura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }
