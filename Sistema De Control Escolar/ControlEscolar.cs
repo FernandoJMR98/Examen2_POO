@@ -13,28 +13,18 @@ namespace Faculty
         private List<Asignatura> asignaturas;
         private List<Calificacion> calificaciones;
 
-        //Path máquina 1
-        //private string txt_alumnos = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\alumnos.txt";
-        //private string txt_asignaturas = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\asignaturas.txt";
-        //private string txt_calificaciones = @"C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\calificaciones.txt";
-
-        //Path máquina 2
-        private string txt_alumnos = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\alumnos.txt";
-        private string txt_asignaturas = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\asignaturas.txt";
-        private string txt_calificaciones = @"D:\Lenguajes de programacion\C_sharp\Examen2_POO\calificaciones.txt";
-
 
         public ControlEscolar() { 
         
-            alumnos = EasyFile<Alumno>.LoadDataFromFile(txt_alumnos,
+            alumnos = EasyFile<Alumno>.LoadDataFromFile("alumnos.txt",
                       tokens => new Alumno(Convert.ToInt32(tokens[0]), 
                       tokens[1], tokens[2]));
             
-            asignaturas = EasyFile<Asignatura>.LoadDataFromFile(txt_asignaturas,
+            asignaturas = EasyFile<Asignatura>.LoadDataFromFile("asignaturas.txt",
                           tokens => new Asignatura(Convert.ToInt32(tokens[0]),
                           tokens[1], Convert.ToInt32(tokens[2])));
 
-            calificaciones = EasyFile<Calificacion>.LoadDataFromFile(txt_calificaciones,
+            calificaciones = EasyFile<Calificacion>.LoadDataFromFile("calificaciones.txt",
                              tokens => new Calificacion(Convert.ToInt32(tokens[0]),
                              Convert.ToInt32(tokens[1]), Convert.ToInt32(tokens[2])));
 
@@ -48,7 +38,7 @@ namespace Faculty
 
         public void NewAlumno(int AlumnoID, string AlumnoName, string AlumnoLastName) {
             alumnos.Add(new Alumno(AlumnoID, AlumnoName, AlumnoLastName));
-            EasyFile<Alumno>.SaveDataToFile(txt_alumnos, new[] { "Matricula",
+            EasyFile<Alumno>.SaveDataToFile("alumnos.txt", new[] { "Matricula",
                 "Nombre", "Apellido" }, alumnos);
         }
 
@@ -61,7 +51,7 @@ namespace Faculty
             list_cal.Add(new Calificacion(matricula, clave, cal));
             list_cal.Sort((a, b) => a.Matricula.CompareTo(b.Matricula));
 
-            EasyFile<Calificacion>.SaveDataToFile(txt_calificaciones, new[] { "Matricula",
+            EasyFile<Calificacion>.SaveDataToFile("calificaciones.txt", new[] { "Matricula",
                 "Clave", "CalifacionObtenida" }, list_cal);
         }
 
@@ -89,7 +79,7 @@ namespace Faculty
             calificaciones.ForEach(a => cal.Add(new Calificacion(a.Matricula, a.Clave, a.CalifacionObtenida)));
             asignaturas.ForEach(a => cal.Add(new Calificacion(matricula, a.Clave, -1)));
             cal.ForEach(a => NewCalificacion(a.Matricula, a.Clave, a.CalifacionObtenida));
-            EasyFile<Calificacion>.SaveDataToFile(txt_calificaciones, new[] { "Matricula",
+            EasyFile<Calificacion>.SaveDataToFile("calificaciones.txt", new[] { "Matricula",
                 "Clave", "CalifacionObtenida" }, cal);
         }
 

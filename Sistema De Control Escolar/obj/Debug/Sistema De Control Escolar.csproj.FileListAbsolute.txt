@@ -58,3 +58,23 @@ C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sis
 C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.CoreCompileInputs.cache
 C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.exe
 C:\Users\ferna\Source\Repos\Examen2_POO\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.pdb
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.AssemblyReference.cache
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.SuggestedBindingRedirects.cache
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AcercaDeForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AltaAlumnoForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AlumnosForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReporteAlumnosReprobadosForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AsignarCalificacionesForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.AsignaturasForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.Form1.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.Properties.Resources.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReporteExtraordinarioForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReportePromedioParcialForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema_De_Control_Escolar.ReportePromedioTotalForm.resources
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.GenerateResource.cache
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.csproj.CoreCompileInputs.cache
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.exe
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\obj\Debug\Sistema De Control Escolar.pdb
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.exe.config
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.exe
+D:\Fernando\Documents\Personal\Licenciatura\Onceavo semestre\Programación orientada a objetos\Examen 2\Examen2_POO-main\Sistema De Control Escolar\bin\Debug\Sistema De Control Escolar.pdb
